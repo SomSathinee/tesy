@@ -1,0 +1,29 @@
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav-content class="bg">
+    <mat-card class="example-card">
+
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="img">
+      <mat-card-content>
+
+        <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()" >
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="email"  formControlName="email" >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput type="password" placeholder="password"   formControlName="password">
+          </mat-form-field>
+          <br><button mat-stroked-button color="warn" [routerLink]="['/nav']"  (click)="login()">เข้าสู่ระบบ</button>
+        </form>
+
+        
+      </mat-card-content>
+      <mat-card-actions class="button">
+       
+        <button mat-stroked-button color="warn" [routerLink]="['/signup']">สมัครสมาชิก</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,41 @@
+<div class="example-container" >
+  <mat-toolbar style="background-color:#388E3C; color:white" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Responsive App</h1>
+
+    <span class="example-spacer"></span>
+    <!--  <button mat-button class="example-icon" (click)="this.auth.signOut()" [routerLink]="['/login']">ออกจากระบบ</button> -->
+      <button mat-icon-button [matMenuTriggerFor]="notifications"><mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon></button>
+      
+      <button mat-button [matMenuTriggerFor]="menu" style="border-radius: 50px; margin: 16px; height: 50px;">
+          <img src="https://scontent.fbkk14-1.fna.fbcdn.net/v/t1.0-9/37208281_497837380665473_2336000465679941632_n.jpg?_nc_cat=0&oh=f8ba6bad0a12628c93622d09fdf62758&oe=5BC92133"
+          style="border-radius: 50%; width: 40px;height: 40px; vertical-align:middle; ">
+        Hello! Nattapong
+        <mat-icon>expand_more</mat-icon>
+          
+       
+      </button>
+
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item><mat-icon>person</mat-icon>ข้อมูลส่วนตัว</button>
+          <button mat-menu-item><mat-icon>input</mat-icon>ออกจากระบบ</button>
+        </mat-menu>
+        <mat-menu #notifications="matMenu">
+          <button mat-menu-item><mat-icon>person</mat-icon>ข้อมูลส่วนตัว</button>
+          <button mat-menu-item><mat-icon>input</mat-icon>ออกจากระบบ</button>
+        </mat-menu>
+
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"   >
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"   class="side">
+      <button [routerLink]="['/register']"  >sun</button>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+

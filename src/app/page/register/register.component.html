@@ -1,0 +1,111 @@
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav-content class="bg">
+    <mat-card class="example-card">
+      <mat-card-header style="text-align:center">
+        
+        <h1>กรุณากรอกข้อมูล</h1>
+      </mat-card-header>
+
+      <mat-card-content>
+
+       
+              <table>
+                <tr>
+                  <td>
+                    <ng-template matStepLabel>ข้อมูลส่วนตัว</ng-template>
+                    <mat-form-field>
+                      <input matInput required placeholder="ชื่อ" name="firstName" [(ngModel)] = 'resOwner.firstName'>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field>
+                      <input matInput placeholder="นามสกุล"  required name="lastName" [(ngModel)] = 'resOwner.lastName'>
+                    </mat-form-field>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field>
+                      <input matInput placeholder="เลขบัตรประชาชน" required name="personID" [(ngModel)] = 'resOwner.personID'>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field>
+                      <input matInput placeholder="หมายเลขโทรศัพท์" required name="phoneNumber" [(ngModel)] = 'resOwner.phoneNumber'>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="picker"  required name="birthday">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </td>
+
+                </tr>
+                <tr>
+                  
+                    <h3>ที่อยู่</h3>
+                
+                </tr>
+
+                <tr>
+                  <td>
+                    <mat-form-field>
+                      <textarea   matInput  required placeholder="ที่อยู่"  name="address" [(ngModel)] = 'resOwner.address.address'></textarea>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field>
+                      <input  matInput  required placeholder="ตำบล/แขวง"  name="district" [(ngModel)] = 'resOwner.address.district'>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field>
+                      <input  matInput  required placeholder="อำเภอ/เขต"   name="subDistrict" [(ngModel)] = 'resOwner.address.subDistrict'>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field>
+                      <input  matInput  required placeholder="จังหวัด"   name="province" [(ngModel)] = 'resOwner.address.province'>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field>
+                      <input  matInput  required placeholder="รหัสไปรษณี"  name="postalCode" [(ngModel)] = 'resOwner.address.postalCode'>
+                    </mat-form-field>
+                  </td>
+                </tr>
+
+              </table>
+
+              <div style="text-align:center;">
+              <button mat-raised-button (click)="sendResOwner()" color="warn"  [routerLink]="['/selecteRestaurant']" routerLinkActive="router-link-active" >บันทึกข้อมูล</button>
+              </div>
+     
+
+
+
+
+
+
+          
+
+
+      </mat-card-content>
+      <mat-card-actions class="button">
+
+
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
